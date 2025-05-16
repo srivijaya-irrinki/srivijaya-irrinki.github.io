@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sri's Portfolio</title>
+  <link rel="icon" type="image/x-icon" href="fav.png">
+  <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.20.6/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const Navbar = () => (
+      <nav className="bg-gray-900 p-4 sticky top-0 z-10">
+        <div className="container mx-auto flex justify-between items-center">
+          <h1 className="text-white text-xl font-bold">SRI VIJAYA</h1>
+          <div className="space-x-6">
+            <a href="#home" className="text-white hover:text-blue-400">Home</a>
+            <a href="#about" className="text-white hover:text-blue-400">About</a>
+            <a href="#skills" className="text-white hover:text-blue-400">Skills</a>
+            <a href="#projects" className="text-white hover:text-blue-400">Projects</a>
+            <a href="#contact" className="text-white hover:text-blue-400">Contact</a>
+          </div>
+        </div>
+      </nav>
+    );
+
+    const Hero = () => (
+      <section 
+        id="home" 
+        className="py-32 text-center bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('img.jpg')" }}
+      >
+        <div className="container mx-auto bg-black bg-opacity-60 py-12 rounded-lg">
+          <h2 className="text-5xl font-bold mb-4 text-white">SRI VIJAYA IRRINKI</h2>
+          <p className="text-2xl mb-6 text-white">Developer | MCA 2024</p>
+          <a href="#projects" className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition">Explore My Work</a>
+        </div>
+      </section>
+    );
+
+    const About = () => (
+      <section id="about" className="bg-gray-300 py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-8">About Me</h2>
+          <p className="text-lg max-w-3xl mx-auto leading-relaxed">
+            I just finished my MCA in 2024 and have been learning Full Stack Java,Python on the side.
+            I worked on a few Acadamic projects and some mini projects,
+            which was a great way to put my skills to use. 
+            I’m now looking for an entry-level job where I can jump in, contribute, and keep growing as a developer
+          </p>
+        </div>
+      </section>
+    );
+
+    const Skills = () => (
+      <section id="skills" className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">My Skills</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          <div className="bg-gray-100 p-4 rounded-lg text-center hover:bg-blue-500 hover:text-white transition-colors duration-200">
+              <p className="text-lg font-semibold">HTML/CSS</p>
+            </div>
+            <div className="bg-gray-100 p-4 rounded-lg text-center hover:bg-blue-500 hover:text-white transition-colors duration-200">
+              <p className="text-lg font-semibold">JavaScript</p>
+            </div>
+            <div className="bg-gray-100 p-4 rounded-lg text-center hover:bg-blue-500 hover:text-white transition-colors duration-200">
+              <p className="text-lg font-semibold">React.js</p>
+            </div>
+            <div className="bg-gray-100 p-4 rounded-lg text-center hover:bg-blue-500 hover:text-white transition-colors duration-200">
+              <p className="text-lg font-semibold">SQL</p>
+            </div>
+            <div className="bg-gray-100 p-4 rounded-lg text-center hover:bg-blue-500 hover:text-white transition-colors duration-200">
+              <p className="text-lg font-semibold">Java</p>
+            </div>
+            <div className="bg-gray-100 p-4 rounded-lg text-center hover:bg-blue-500 hover:text-white transition-colors duration-200">
+              <p className="text-lg font-semibold">Python</p>
+            </div>
+            <div className="bg-gray-100 p-4 rounded-lg text-center hover:bg-blue-500 hover:text-white transition-colors duration-200">
+              <p className="text-lg font-semibold">GitHub</p>
+            </div>
+            <div className="bg-gray-100 p-4 rounded-lg text-center hover:bg-blue-500 hover:text-white transition-colors duration-200">
+              <p className="text-lg font-semibold">MS Excel</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+
+    const ProjectCard = ({ title, description, technologies }) => (
+      <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+        <h3 className="text-xl font-bold mb-2">{title}</h3>
+        <p className="text-gray-600 mb-4">{description}</p>
+        <p className="text-sm text-gray-500"><strong>Technologies:</strong> {technologies}</p>
+        
+      </div>
+    );
+
+    const Projects = () => (
+      <section id="projects" className="py-20 bg-gray-300">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">My Projects</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <ProjectCard 
+              title="Securing Resources in Decentralized Cloud Storage"
+              description="An acadamic project for my final Semester that is developed to enhance security for data stored in decentralized cloud environments."
+              technologies="Java, SQL,HTML/CSS,javascript"
+            />
+            <ProjectCard 
+              title="Personal Portfolio Website-2"
+              description="Designed and built a responsive portfolio website to showcase my skills and projects, utilizing modern web technologies."
+              technologies="React.js, Tailwind CSS, JavaScript"
+            />
+            <ProjectCard 
+              title="Task Management App"
+              description="Created a web-based application for task tracking and team collaboration, featuring real-time updates and a user-friendly interface."
+              technologies="React.js, JavaScript, SQL"
+            />
+            <ProjectCard 
+              title="Personal Portfolio Website-1"
+              description="Designed a simple portfolio website for myself using basic teechnologies ."
+              technologies="Html,CSS,JavaScript"
+            />
+          </div>
+        </div>
+      </section>
+    );
+
+    const Contact = () => (
+      <section id="contact" className="bg-gray-100 py-20">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-8">Get in Touch</h2>
+          <div className="space-y-4">
+            <a 
+              href="mailto:srivijayairrinki7@gmail.com" 
+              className="text-lg text-blue-600 hover:underline block"
+            >
+              Email: srivijayairrinki7@gmail.com
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/srivijaya-irrinki-b297682bb/" 
+              className="text-lg text-blue-600 hover:underline block"
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+            <a 
+              href="https://github.com/srivijaya-irrinki " 
+              className="text-lg text-blue-600 hover:underline block"
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+          </div>
+          <a 
+            href=".\Srivijaya-resume.pdf" 
+            download 
+            className="mt-6 inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
+          >
+            Download Resume
+          </a>
+        </div>
+      </section>
+    );
+
+    const App = () => (
+      <div>
+        <Navbar />
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+      </div>
+    );
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>
